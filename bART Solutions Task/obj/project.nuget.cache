@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "jODrQRd/9ARafm6UarwjqI37PXA+Fsq/5oBNCab8CHvXe+DqovmK9avmDKhn7j3y2RcEzHdToebTcAIyFmPG7A==",
+  "success": true,
+  "projectFilePath": "D:\\Exoft\\bART Solutions Task\\bART Solutions Task\\bART Solutions Task.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Teodo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Teodo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Teodo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Teodo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Teodo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Teodo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
