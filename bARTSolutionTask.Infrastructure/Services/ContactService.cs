@@ -32,7 +32,12 @@ public class ContactService : IContactService
 
     public async Task<object?> UpdateAccountIdAsync(Guid id, UpdateContactDto contactDto)
     {
-        await _contactRepository.UpdateAccountIdAsync(id, contactDto);
+        Contact contact = await _contactRepository.GetContactByIdAsync(id);
+        if (contact is not null)
+        {
+            contact.AccountId = contactDto.AccountId;
+            await _contactRepository.UpdateAccountIdAsync(id, contact);
+        }
         return contactDto;
     }
 }

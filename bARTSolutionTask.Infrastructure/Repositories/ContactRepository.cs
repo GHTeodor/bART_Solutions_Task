@@ -27,15 +27,15 @@ public class ContactRepository : IContactRepository
         await _dbContext.DisposeAsync();
     }
 
-    public async Task UpdateAccountIdAsync(Guid id, UpdateContactDto contactDto)
+    public async Task<Contact> GetContactByIdAsync(Guid id)
     {
-        Contact contact = await _dbContext.Contacts.SingleOrDefaultAsync(c => c.Id == id);
-        if (contact is not null)
-        {
-            contact.AccountId = contactDto.AccountId;
-            _dbContext.Contacts.Update(contact);
-            await _dbContext.SaveChangesAsync();
-        }
+        return await _dbContext.Contacts.SingleOrDefaultAsync(c => c.Id == id);
+    }
+
+    public async Task UpdateAccountIdAsync(Guid id, Contact contact)
+    {
+        _dbContext.Contacts.Update(contact);
+        await _dbContext.SaveChangesAsync();
         await _dbContext.DisposeAsync();
     }
 }
