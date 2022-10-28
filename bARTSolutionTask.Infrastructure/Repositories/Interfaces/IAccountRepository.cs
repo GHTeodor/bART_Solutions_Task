@@ -1,6 +1,10 @@
-﻿namespace bARTSolutionTask.Infrastructure.Repositories.Interfaces;
+﻿using bARTSolutionTask.Domain.Models;
+
+namespace bARTSolutionTask.Infrastructure.Repositories.Interfaces;
 
 public interface IAccountRepository
 {
-    Task<object?> GetAllAsync();
+    Task<ICollection<Account>> GetAllAsync();
+    Task<object?> GetByNameAsync(string name);
+    Task CreateAsync(Account account);
 }

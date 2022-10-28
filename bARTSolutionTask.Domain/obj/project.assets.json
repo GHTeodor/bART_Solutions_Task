@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
+      "projectUniqueName": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
       "projectName": "bARTSolutionTask.Domain",
-      "projectPath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
+      "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
       "packagesPath": "C:\\Users\\Teodo\\.nuget\\packages\\",
-      "outputPath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Domain\\obj\\",
+      "outputPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Teodo\\AppData\\Roaming\\NuGet\\NuGet.Config",

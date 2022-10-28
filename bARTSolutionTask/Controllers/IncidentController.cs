@@ -1,5 +1,4 @@
-﻿using bARTSolutionTask.Domain.Models;
-using bARTSolutionTask.Infrastructure.DTOs;
+﻿using bARTSolutionTask.Infrastructure.DTOs;
 using bARTSolutionTask.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +24,12 @@ namespace bARTSolutionTask.Controllers
         [HttpGet("{id:length(36)}")]
         public async Task<IActionResult> GetByIdAsync(string id)
         {
-            return Ok(await _incidentService.GetByIdAsync(id));
+            var incident = await _incidentService.GetByIdAsync(id);
+            if (incident is null)
+            {
+                return NotFound($"There is no incident with Id: {id}");
+            }
+            return Ok(incident);
         }
 
         [HttpPost]

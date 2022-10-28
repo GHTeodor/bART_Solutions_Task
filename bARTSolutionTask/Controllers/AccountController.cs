@@ -1,4 +1,6 @@
-﻿using bARTSolutionTask.Infrastructure.Services.Interfaces;
+﻿using bARTSolutionTask.Domain.Models;
+using bARTSolutionTask.Infrastructure.DTOs;
+using bARTSolutionTask.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bARTSolutionTask.Controllers
@@ -18,6 +20,23 @@ namespace bARTSolutionTask.Controllers
         public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _accountService.GetAllAsync());
+        }
+
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetByNameAsync(string name)
+        {
+            var account = await _accountService.GetByNameAsync(name);
+            if (account is null)
+            {
+                return NotFound();
+            }
+            return Ok(account);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account)
+        {
+            return Ok(await _accountService.CreateAsync(account));
         }
     }
 }

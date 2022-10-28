@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TAOEu6iVcETTJm/BWYOM/C7EsPZNFaKZ/YXloSA0BLxVliUSPX0Tdwz1Oi6Fqw03Qjn1gNGjOZ9zHIgvfXQ6Vw==",
+  "dgSpecHash": "W6kBBHIt7Ebf171TmNVzF+RL4EyA8hUu1vtrhNCU5b5C9MiIg+HDmpEqvnSwUUUCf1SR7Qm0eRTf3xsyizU0Eg==",
   "success": true,
-  "projectFilePath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
+  "projectFilePath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

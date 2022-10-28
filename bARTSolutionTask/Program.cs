@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using bARTSolutionTask.Configurations;
-using bARTSolutionTask.Infrastructure.DbContext;
-using Microsoft.EntityFrameworkCore;
+using bARTSolutionTask.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +16,7 @@ builder.Services.AddServices();
 
 builder.Services.AddAutoMapper(typeof(MapperInitializer));
 
-builder.Services.AddDbContext<DBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDBConnection")));
+builder.Services.AddDbContextCustom(builder.Configuration);
 
 var app = builder.Build();
 

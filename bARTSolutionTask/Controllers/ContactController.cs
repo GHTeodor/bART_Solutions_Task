@@ -1,4 +1,5 @@
-﻿using bARTSolutionTask.Infrastructure.Services.Interfaces;
+﻿using bARTSolutionTask.Infrastructure.DTOs;
+using bARTSolutionTask.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bARTSolutionTask.Controllers
@@ -18,6 +19,18 @@ namespace bARTSolutionTask.Controllers
         public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _contactService.GetAllAsync());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] CreateContactDto contactDto)
+        {
+            return Ok(await _contactService.CreateAsync(contactDto));
+        }
+
+        [HttpPatch("{id:guid}")]
+        public async Task<IActionResult> UpdateAccountIdAsync(Guid id, [FromBody] UpdateContactDto contactDto)
+        {
+            return Ok(await _contactService.UpdateAccountIdAsync(id, contactDto));
         }
     }
 }

@@ -23,9 +23,10 @@ public class IncidentRepository : IIncidentRepository
     public async Task<Incident?> GetByIdAsync(string id)
     {
         return await _dbContext
-                   .Incidents
-                   .Include(i => i.Accounts)
-                   .SingleOrDefaultAsync(i => i.Name == id);
+            .Incidents
+            .Include(i => i.Accounts)
+            .ThenInclude(i => i.Contacts)
+            .SingleOrDefaultAsync(i => i.Name == id);
     }
 
     public async Task CreateOneAsync(Incident incident)
@@ -50,7 +51,7 @@ public class IncidentRepository : IIncidentRepository
         await _dbContext.SaveChangesAsync();
         await _dbContext.DisposeAsync();
     }
-    
+
     public async Task DeleteByIdAsync(string id)
     {
         _dbContext.Incidents.Remove(await GetByIdAsync(id));
