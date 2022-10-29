@@ -1,0 +1,216 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj": {}
+  },
+  "projects": {
+    "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
+        "projectName": "bARTSolutionTask.Domain",
+        "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj",
+        "packagesPath": "C:\\Users\\Teodo\\.nuget\\packages\\",
+        "outputPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Teodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj",
+        "projectName": "bARTSolutionTask.Infrastructure",
+        "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Teodo\\.nuget\\packages\\",
+        "outputPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Teodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj": {
+                "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Domain\\bARTSolutionTask.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
+        "projectName": "bARTSolutionTask",
+        "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
+        "packagesPath": "C:\\Users\\Teodo\\.nuget\\packages\\",
+        "outputPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Teodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj": {
+                "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
