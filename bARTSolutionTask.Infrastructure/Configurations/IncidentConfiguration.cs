@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace bARTSolutionTask.Infrastructure.Configurations;
 
-public class IncidentConfiguration: IEntityTypeConfiguration<Incident>
+public class IncidentConfiguration : IEntityTypeConfiguration<Incident>
 {
     public void Configure(EntityTypeBuilder<Incident> builder)
     {

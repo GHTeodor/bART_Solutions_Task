@@ -14,7 +14,7 @@ public class CreateContactDto
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    [EmailAddress] 
+    [EmailAddress]
     [UniqEmail]
     public string Email { get; set; }
 }

@@ -20,7 +20,7 @@ namespace bARTSolutionTask.Controllers
         {
             return Ok(await _incidentService.GetAllAsync(token));
         }
-        
+
         [HttpGet("[action]/{nameId:length(36)}")]
         public async Task<IActionResult> GetByIdWithDetailsAsync(string nameId, CancellationToken token = default)
         {
@@ -29,11 +29,13 @@ namespace bARTSolutionTask.Controllers
             {
                 return NotFound($"There is no incident with nameId: {nameId}");
             }
+
             return Ok(incident);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOneAsync([FromBody] CreateIncidentDto incident, CancellationToken token = default)
+        public async Task<IActionResult> CreateOneAsync([FromBody] CreateIncidentDto incident,
+            CancellationToken token = default)
         {
             return Ok(await _incidentService.CreateOneAsync(incident, token));
         }
@@ -49,6 +51,7 @@ namespace bARTSolutionTask.Controllers
             {
                 return NotFound($"Incident with nameId: {nameId} is not exist \n{e.Message}");
             }
+
             return Ok($"Incident with nameId: {nameId} successfully deleted");
         }
     }

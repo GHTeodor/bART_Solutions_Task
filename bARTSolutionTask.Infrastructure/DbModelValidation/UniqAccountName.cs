@@ -3,7 +3,7 @@ using bARTSolutionTask.Infrastructure.DbContext;
 
 namespace bARTSolutionTask.Infrastructure.DbModelValidation;
 
-public class UniqAccountName: ValidationAttribute
+public class UniqAccountName : ValidationAttribute
 {
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
     {
@@ -13,6 +13,7 @@ public class UniqAccountName: ValidationAttribute
         {
             return ValidationResult.Success;
         }
+
         return new ValidationResult(ErrorMessage ?? "Name must be unique");
     }
 }

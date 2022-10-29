@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace bARTSolutionTask.Domain.Models;
+﻿namespace bARTSolutionTask.Domain.Models;
 
 public class Account : BaseEntity
 {

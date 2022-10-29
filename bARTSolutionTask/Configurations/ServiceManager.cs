@@ -18,7 +18,7 @@ public static class ServiceManager
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<IContactRepository, ContactRepository>();
         services.AddScoped<IIncidentRepository, IncidentRepository>();
-    
+
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }

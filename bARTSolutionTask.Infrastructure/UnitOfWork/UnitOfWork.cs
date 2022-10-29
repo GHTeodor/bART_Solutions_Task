@@ -21,12 +21,12 @@ public class UnitOfWork : IUnitOfWork
     public IAccountRepository Accounts { get; }
     public IContactRepository Contacts { get; }
     public IIncidentRepository Incidents { get; }
-    
+
     public async Task SaveAsync(CancellationToken token = default)
     {
         await _dbContext.SaveChangesAsync(token);
     }
-    
+
     private Utf8JsonWriter? _jsonWriter = new(new MemoryStream());
 
     public void Dispose()
