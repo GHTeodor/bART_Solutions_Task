@@ -15,27 +15,23 @@ public class ContactRepository : IContactRepository
         _dbContext = dbContext;
     }
 
-    public async Task<object?> GetAllAsync()
+    public async Task<ICollection<Contact>> GetAllAsync(CancellationToken token = default)
     {
-        return await _dbContext.Contacts.ToListAsync();
+        return await _dbContext.Contacts.ToListAsync(token);
     }
 
-    public async Task CreateAsync(Contact contact)
+    public async Task CreateAsync(Contact contact, CancellationToken token = default)
     {
-        await _dbContext.Contacts.AddAsync(contact);
-        await _dbContext.SaveChangesAsync();
-        await _dbContext.DisposeAsync();
+        await _dbContext.Contacts.AddAsync(contact, token);
     }
 
-    public async Task<Contact> GetContactByIdAsync(Guid id)
+    public async Task<Contact> GetContactByIdAsync(Guid id, CancellationToken token = default)
     {
-        return await _dbContext.Contacts.SingleOrDefaultAsync(c => c.Id == id);
+        return await _dbContext.Contacts.SingleOrDefaultAsync(c => c.Id == id, token);
     }
 
-    public async Task UpdateAccountIdAsync(Guid id, Contact contact)
+    public async Task UpdateAccountIdAsync(Contact contact)
     {
-        _dbContext.Contacts.Update(contact);
-        await _dbContext.SaveChangesAsync();
-        await _dbContext.DisposeAsync();
+        await Task.FromResult(_dbContext.Contacts.Update(contact));
     }
 }

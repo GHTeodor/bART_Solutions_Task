@@ -5,8 +5,8 @@ namespace bARTSolutionTask.Infrastructure.Services.Interfaces;
 
 public interface IIncidentService
 {
-    Task<object?> GetAllAsync();
-    Task<Incident> CreateOneAsync(CreateIncidentDto incident);
-    Task<object?> GetByIdAsync(string id);
-    Task DeleteByIdAsync(string id);
+    Task<ICollection<Incident>> GetAllAsync(CancellationToken token = default);
+    Task<Incident> CreateOneAsync(CreateIncidentDto incident, CancellationToken token = default);
+    Task<Incident> GetByIdAsync(string id, CancellationToken token = default);
+    Task DeleteByIdAsync(string id, CancellationToken token = default);
 }

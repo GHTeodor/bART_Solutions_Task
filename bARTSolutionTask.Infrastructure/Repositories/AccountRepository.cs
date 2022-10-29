@@ -14,28 +14,26 @@ public class AccountRepository : IAccountRepository
         _dbContext = dbContext;
     }
 
-    public async Task<ICollection<Account>> GetAllAsync()
+    public async Task<ICollection<Account>> GetAllAsync(CancellationToken token = default)
     {
-        return await _dbContext.Accounts.ToListAsync();
+        return await _dbContext.Accounts.ToListAsync(token);
     }
 
-    public async Task<object?> GetByNameAsync(string name)
+    public async Task<Account?> GetByNameAsync(string name, CancellationToken token = default)
     {
-        return await _dbContext.Accounts.SingleOrDefaultAsync(a => a.Name.ToUpper() == name.ToUpper());
+        return await _dbContext.Accounts.Include(a => a.Contacts)
+            .SingleOrDefaultAsync(a => a.Name.ToUpper() == name.ToUpper(), token);
     }
 
-    public async Task CreateAsync(Account account)
+    public async Task CreateAsync(Account account, CancellationToken token = default)
     {
-        await _dbContext.Accounts.AddAsync(account);
+        await _dbContext.Accounts.AddAsync(account, token);
         if (account.Contacts.Any())
         {
             foreach (var contact in account.Contacts)
             {
-                await _dbContext.Contacts.AddAsync(contact);
+                await _dbContext.Contacts.AddAsync(contact, token);
             }
         }
-        
-        await _dbContext.SaveChangesAsync();
-        await _dbContext.DisposeAsync();
     }
 }

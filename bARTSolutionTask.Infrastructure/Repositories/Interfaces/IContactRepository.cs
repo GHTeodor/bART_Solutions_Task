@@ -5,8 +5,8 @@ namespace bARTSolutionTask.Infrastructure.Repositories.Interfaces;
 
 public interface IContactRepository
 {
-    Task<object?> GetAllAsync();
-    Task CreateAsync(Contact contact);
-    Task UpdateAccountIdAsync(Guid id, Contact contactDto);
-    Task<Contact> GetContactByIdAsync(Guid id);
+    Task<ICollection<Contact>> GetAllAsync(CancellationToken token = default);
+    Task CreateAsync(Contact contact, CancellationToken token = default);
+    Task UpdateAccountIdAsync(Contact contactDto);
+    Task<Contact> GetContactByIdAsync(Guid id, CancellationToken token = default);
 }

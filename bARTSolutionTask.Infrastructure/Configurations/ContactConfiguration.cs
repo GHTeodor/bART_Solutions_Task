@@ -20,7 +20,6 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
         builder.HasOne(f => f.Account)
             .WithMany(f => f.Contacts)
             .HasForeignKey(f => f.AccountId)
-            .IsRequired(false)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

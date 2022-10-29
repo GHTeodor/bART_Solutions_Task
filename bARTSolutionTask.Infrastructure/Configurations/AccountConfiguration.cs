@@ -19,7 +19,6 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.HasOne(f => f.Incident)
             .WithMany(f => f.Accounts)
             .HasForeignKey(f => f.IncidentId)
-            .IsRequired(false)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

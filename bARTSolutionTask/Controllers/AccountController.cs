@@ -17,15 +17,15 @@ namespace bARTSolutionTask.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync(CancellationToken token = default)
         {
-            return Ok(await _accountService.GetAllAsync());
+            return Ok(await _accountService.GetAllAsync(token));
         }
 
-        [HttpGet("{name}")]
-        public async Task<IActionResult> GetByNameAsync(string name)
+        [HttpGet("[action]/{name}")]
+        public async Task<IActionResult> GetByNameWithDetailsAsync(string name, CancellationToken token = default)
         {
-            var account = await _accountService.GetByNameAsync(name);
+            var account = await _accountService.GetByNameAsync(name, token);
             if (account is null)
             {
                 return NotFound();
@@ -34,9 +34,9 @@ namespace bARTSolutionTask.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account, CancellationToken token = default)
         {
-            return Ok(await _accountService.CreateAsync(account));
+            return Ok(await _accountService.CreateAsync(account, token));
         }
     }
 }

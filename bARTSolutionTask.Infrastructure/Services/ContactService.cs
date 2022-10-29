@@ -4,39 +4,47 @@ using bARTSolutionTask.Infrastructure.DTOs;
 using bARTSolutionTask.Infrastructure.Repositories;
 using bARTSolutionTask.Infrastructure.Repositories.Interfaces;
 using bARTSolutionTask.Infrastructure.Services.Interfaces;
+using bARTSolutionTask.Infrastructure.UnitOfWork.Interfaces;
 
 namespace bARTSolutionTask.Infrastructure.Services;
 
 public class ContactService : IContactService
 {
-    private readonly IContactRepository _contactRepository;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public ContactService(IContactRepository contactRepository, IMapper mapper)
+    public ContactService(IMapper mapper, IUnitOfWork unitOfWork)
     {
-        _contactRepository = contactRepository;
         _mapper = mapper;
+        _unitOfWork = unitOfWork;
     }
 
-    public async Task<object?> GetAllAsync()
+    public async Task<ICollection<Contact>> GetAllAsync(CancellationToken token = default)
     {
-        return await _contactRepository.GetAllAsync();
+        return await _unitOfWork.Contacts.GetAllAsync(token);
     }
 
-    public async Task<object?> CreateAsync(CreateContactDto contactDto)
+    public async Task<Contact> CreateAsync(CreateContactDto contactDto, CancellationToken token = default)
     {
         Contact contact = _mapper.Map<Contact>(contactDto);
-        await _contactRepository.CreateAsync(contact);
+        
+        await _unitOfWork.Contacts.CreateAsync(contact, token);
+        await _unitOfWork.SaveAsync(token);
+        await _unitOfWork.DisposeAsync();
+        
         return contact;
     }
 
-    public async Task<object?> UpdateAccountIdAsync(Guid id, UpdateContactDto contactDto)
+    public async Task<UpdateContactDto> UpdateAccountIdAsync(Guid id, UpdateContactDto contactDto, CancellationToken token = default)
     {
-        Contact contact = await _contactRepository.GetContactByIdAsync(id);
+        Contact contact = await _unitOfWork.Contacts.GetContactByIdAsync(id, token);
         if (contact is not null)
         {
             contact.AccountId = contactDto.AccountId;
-            await _contactRepository.UpdateAccountIdAsync(id, contact);
+            
+            await _unitOfWork.Contacts.UpdateAccountIdAsync(contact);
+            await _unitOfWork.SaveAsync(token);
+            await _unitOfWork.DisposeAsync();
         }
         return contactDto;
     }

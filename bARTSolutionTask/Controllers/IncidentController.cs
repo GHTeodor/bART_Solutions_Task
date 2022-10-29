@@ -16,33 +16,40 @@ namespace bARTSolutionTask.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync(CancellationToken token = default)
         {
-            return Ok(await _incidentService.GetAllAsync());
+            return Ok(await _incidentService.GetAllAsync(token));
         }
         
-        [HttpGet("{id:length(36)}")]
-        public async Task<IActionResult> GetByIdAsync(string id)
+        [HttpGet("[action]/{nameId:length(36)}")]
+        public async Task<IActionResult> GetByIdWithDetailsAsync(string nameId, CancellationToken token = default)
         {
-            var incident = await _incidentService.GetByIdAsync(id);
+            var incident = await _incidentService.GetByIdAsync(nameId, token);
             if (incident is null)
             {
-                return NotFound($"There is no incident with Id: {id}");
+                return NotFound($"There is no incident with nameId: {nameId}");
             }
             return Ok(incident);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOneAsync([FromBody] CreateIncidentDto incident)
+        public async Task<IActionResult> CreateOneAsync([FromBody] CreateIncidentDto incident, CancellationToken token = default)
         {
-            return Ok(await _incidentService.CreateOneAsync(incident));
+            return Ok(await _incidentService.CreateOneAsync(incident, token));
         }
 
-        [HttpDelete("{id:length(36)}")]
-        public async Task<IActionResult> DeleteByIdAsync(string id)
+        [HttpDelete("{nameId:length(36)}")]
+        public async Task<IActionResult> DeleteByIdAsync(string nameId, CancellationToken token = default)
         {
-            await _incidentService.DeleteByIdAsync(id);
-            return Ok();
+            try
+            {
+                await _incidentService.DeleteByIdAsync(nameId, token);
+            }
+            catch (ArgumentNullException e)
+            {
+                return NotFound($"Incident with nameId: {nameId} is not exist \n{e.Message}");
+            }
+            return Ok($"Incident with nameId: {nameId} successfully deleted");
         }
     }
 }
