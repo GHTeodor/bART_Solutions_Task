@@ -4,7 +4,7 @@ namespace bARTSolutionTask.Infrastructure.DTOs;
 
 public class AccountDto : BaseEntityDto
 {
-    [UniqAccountName] 
+    [UniqAccountName]
     public string Name { get; set; }
     public string? IncidentId { get; set; }
     public ICollection<ContactDto> Contacts { get; set; }
@@ -12,7 +12,7 @@ public class AccountDto : BaseEntityDto
 
 public class CreateAccountDto
 {
-    [UniqAccountName] 
+    [UniqAccountName]
     public string Name { get; set; }
     public ICollection<CreateContactDto> Contacts { get; set; }
 }

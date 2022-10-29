@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace bARTSolutionTask.Infrastructure.DbContext;
 
-public class DBContext: Microsoft.EntityFrameworkCore.DbContext
+public class DBContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public DBContext(DbContextOptions options) : base(options) { }
+    public DBContext(DbContextOptions options) : base(options)
+    {
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -15,7 +17,7 @@ public class DBContext: Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.ApplyConfiguration(new IncidentConfiguration());
         modelBuilder.ApplyConfiguration(new ContactConfiguration());
     }
-    
+
     public DbSet<Incident> Incidents { get; set; }
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Contact> Contacts { get; set; }

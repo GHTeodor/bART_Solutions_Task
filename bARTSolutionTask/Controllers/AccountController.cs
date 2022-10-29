@@ -1,5 +1,4 @@
-﻿using bARTSolutionTask.Domain.Models;
-using bARTSolutionTask.Infrastructure.DTOs;
+﻿using bARTSolutionTask.Infrastructure.DTOs;
 using bARTSolutionTask.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,11 +29,13 @@ namespace bARTSolutionTask.Controllers
             {
                 return NotFound();
             }
+
             return Ok(account);
         }
-        
+
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account, CancellationToken token = default)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account,
+            CancellationToken token = default)
         {
             return Ok(await _accountService.CreateAsync(account, token));
         }

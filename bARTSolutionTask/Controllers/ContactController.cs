@@ -22,13 +22,15 @@ namespace bARTSolutionTask.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreateContactDto contactDto, CancellationToken token = default)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateContactDto contactDto,
+            CancellationToken token = default)
         {
             return Ok(await _contactService.CreateAsync(contactDto, token));
         }
 
         [HttpPatch("[action]/{id:guid}")]
-        public async Task<IActionResult> UpdateAccountIdAsync(Guid id, [FromBody] UpdateContactDto contactDto, CancellationToken token = default)
+        public async Task<IActionResult> UpdateAccountIdAsync(Guid id, [FromBody] UpdateContactDto contactDto,
+            CancellationToken token = default)
         {
             return Ok(await _contactService.UpdateAccountIdAsync(id, contactDto, token));
         }
