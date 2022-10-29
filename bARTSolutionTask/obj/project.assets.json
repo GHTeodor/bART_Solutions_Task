@@ -2492,11 +2492,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
+      "projectUniqueName": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
       "projectName": "bARTSolutionTask",
-      "projectPath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
+      "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\bARTSolutionTask.csproj",
       "packagesPath": "C:\\Users\\Teodo\\.nuget\\packages\\",
-      "outputPath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask\\obj\\",
+      "outputPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Teodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2513,8 +2513,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj": {
-              "projectPath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj"
+            "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj": {
+              "projectPath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj"
             }
           }
         }

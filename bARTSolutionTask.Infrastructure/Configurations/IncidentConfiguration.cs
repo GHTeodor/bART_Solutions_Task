@@ -16,7 +16,6 @@ public class IncidentConfiguration: IEntityTypeConfiguration<Incident>
 
         builder.HasMany(f => f.Accounts)
             .WithOne(f => f.Incident)
-            .IsRequired()
             .HasForeignKey(f => f.IncidentId)
             .OnDelete(DeleteBehavior.Cascade);
     }

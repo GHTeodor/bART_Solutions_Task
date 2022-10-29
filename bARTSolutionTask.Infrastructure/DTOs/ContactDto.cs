@@ -18,3 +18,8 @@ public class CreateContactDto
     [UniqEmail]
     public string Email { get; set; }
 }
+
+public class UpdateContactDto
+{
+    public Guid AccountId { get; set; }
+}

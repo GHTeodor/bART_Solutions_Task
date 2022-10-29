@@ -1,4 +1,6 @@
-﻿using bARTSolutionTask.Infrastructure.Services.Interfaces;
+﻿using bARTSolutionTask.Domain.Models;
+using bARTSolutionTask.Infrastructure.DTOs;
+using bARTSolutionTask.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bARTSolutionTask.Controllers
@@ -15,9 +17,26 @@ namespace bARTSolutionTask.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync(CancellationToken token = default)
         {
-            return Ok(await _accountService.GetAllAsync());
+            return Ok(await _accountService.GetAllAsync(token));
+        }
+
+        [HttpGet("[action]/{name}")]
+        public async Task<IActionResult> GetByNameWithDetailsAsync(string name, CancellationToken token = default)
+        {
+            var account = await _accountService.GetByNameAsync(name, token);
+            if (account is null)
+            {
+                return NotFound();
+            }
+            return Ok(account);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync([FromBody] CreateAccountDto account, CancellationToken token = default)
+        {
+            return Ok(await _accountService.CreateAsync(account, token));
         }
     }
 }

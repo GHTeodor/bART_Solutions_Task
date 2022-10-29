@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yHNiV9YsPc+0HqFGSccYyAb6wledXthrFkDsMhpZ9l2qPupbVU7aVB0gs/9G3ke+T+u9X88gBinw+EY2jc/g1w==",
+  "dgSpecHash": "ePmIi+WtC/MD/w2uBfLuajP/4W3BmgOYumB2BRBQshwFA9F9FMRiR7a9MAOms3PNFdpIRwapFR9cFKK8ipffHg==",
   "success": true,
-  "projectFilePath": "D:\\Exoft\\bART Solutions Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj",
+  "projectFilePath": "D:\\Exoft\\bART_Solutions_Task\\bARTSolutionTask.Infrastructure\\bARTSolutionTask.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Teodo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Teodo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
